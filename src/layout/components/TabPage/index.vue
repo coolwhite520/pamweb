@@ -30,13 +30,13 @@
           </el-tab-pane>
         </template>
       </el-tabs>
-      <transition name="fade-transform" mode="out-in" appear>
-        <slot>
-          <keep-alive>
-            <component :is="computeActiveComponent" />
-          </keep-alive>
-        </slot>
-      </transition>
+      <!--      <transition name="fade-transform" mode="out-in" appear>-->
+      <!--        <slot>-->
+      <keep-alive>
+        <component :is="computeActiveComponent" />
+      </keep-alive>
+      <!--        </slot>-->
+      <!--      </transition>-->
     </div>
   </Page>
 </template>
