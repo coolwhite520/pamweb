@@ -17,7 +17,7 @@ export default {
         url: '/api/v1/orgs/orgs/',
         fields: [
           ['', ['name', 'comment']]
-          // [this.$t('common.Members'), ['admins', 'auditors', 'users']],
+          // [this.$t('common.Members'), ['admins', 'auditors', 'users']]
         ],
         hasSaveContinue: false,
         fieldsMeta: {

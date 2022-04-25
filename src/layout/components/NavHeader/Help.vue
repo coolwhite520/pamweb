@@ -41,7 +41,7 @@ export default {
           window.open(this.URLSite.HELP_SUPPORT_URL, '_blank')
           break
         case 'enterprise':
-          window.open('https://jumpserver.org/enterprise.html', '_blank')
+          window.open('https://PamServer.org/enterprise.html', '_blank')
           break
         default:
           window.open(this.URLSite.HELP_DOCUMENT_URL, '_blank')

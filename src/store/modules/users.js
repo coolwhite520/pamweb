@@ -110,7 +110,9 @@ const actions = {
         return resolve(state.roles)
       }
       dispatch('getProfile').then(profile => {
-        const { orgs } = profile
+        const { console_orgs, audit_orgs, workbench_orgs } = profile
+        let orgs = _.concat(console_orgs, audit_orgs, workbench_orgs)
+        orgs = _.uniqBy(orgs, 'id')
         commit('SET_ORGS', orgs)
         resolve(orgs)
       }).catch((e) => reject(e))

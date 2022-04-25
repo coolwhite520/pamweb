@@ -1,10 +1,10 @@
 <template>
   <section class="app-main">
-    <!--    <transition name="fade-transform" mode="out-in">-->
-    <keep-alive :include="cachedViews">
-      <router-view :key="key" />
-    </keep-alive>
-    <!--    </transition>-->
+    <transition name="fade-transform" mode="out-in">
+      <keep-alive :include="cachedViews">
+        <router-view :key="key" />
+      </keep-alive>
+    </transition>
   </section>
 </template>
 
@@ -31,15 +31,18 @@ export default {
   overflow: hidden;
   /*padding: 10px 20px 10px;*/
 }
-.fixed-header+.app-main {
+
+.fixed-header + .app-main {
   padding-top: 55px;
 }
+
 .hasTagsView {
   .app-main {
     /* 84 = navbar + tags-view = 50 + 34 */
     min-height: calc(100vh - 84px);
   }
-  .fixed-header+.app-main {
+
+  .fixed-header + .app-main {
     padding-top: 84px;
   }
 }
