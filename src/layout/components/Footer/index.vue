@@ -4,7 +4,7 @@
       Version: <strong> {{ publicSettings.XPACK_LICENSE_INFO.version }} </strong>
     </div>
     <div style="padding-left:20px;">
-      版权所有©{{ publicSettings.XPACK_LICENSE_INFO.corporation }}
+      Copyright©{{ publicSettings.XPACK_LICENSE_INFO.corporation }}
     </div>
   </div>
 </template>
