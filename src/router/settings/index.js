@@ -294,17 +294,17 @@ export default {
         icon: 'map-signs',
         permissions: ['settings.change_other']
       }
-    },
-    {
-      path: '/settings/license',
-      name: 'License',
-      component: () => import('@/views/settings/License'),
-      meta: {
-        title: i18n.t('setting.License'),
-        icon: 'diamond',
-        permissions: ['settings.change_license']
-      }
     }
+    // {
+    //   path: '/settings/license',
+    //   name: 'License',
+    //   component: () => import('@/views/settings/License'),
+    //   meta: {
+    //     title: i18n.t('setting.License'),
+    //     icon: 'diamond',
+    //     permissions: ['settings.change_license']
+    //   }
+    // }
   ]
 }
 
