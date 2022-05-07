@@ -40,7 +40,7 @@ export default {
       name: 'Users',
       meta: {
         title: i18n.t('route.Users'),
-        icon: 'users'
+        icon: 'user'
       },
       children: UsersRoute
     },
@@ -71,17 +71,27 @@ export default {
       meta: {
         licenseRequired: true,
         title: i18n.t('route.Accounts'),
-        icon: 'address-book'
+        icon: 'vcard'
       },
       children: AccountRoutes
     },
+    // {
+    //   path: '/console/strategy',
+    //   component: empty,
+    //   name: 'Strategy',
+    //   meta: {
+    //     title: '策略管理',
+    //     icon: 'chain'
+    //   },
+    //   children: StrategyRoutes
+    // },
     {
       path: '/console/perms',
       component: empty,
       name: 'Perms',
       meta: {
         title: i18n.t('route.Perms'),
-        icon: 'edit'
+        icon: 'flag'
       },
       children: PermsRoute
     },

@@ -7,8 +7,7 @@ export default [
     component: empty,
     meta: {
       title: i18n.t('route.AssetAccount'),
-      app: 'assets',
-      licenseRequired: true
+      app: 'assets'
     },
     redirect: '',
     children: [

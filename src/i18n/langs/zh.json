@@ -1476,10 +1476,10 @@
     "Execute": "执行",
     "Expired": "过期时间",
     "GatherUser": {
-      "GatherUser": "收集用户",
-      "GatherUserList": "收集用户",
+      "GatherUser": "账号发现",
+      "GatherUserList": "账号发现",
       "GatherUserTaskCreate": "创建任务",
-      "GatherUserTaskList": "任务列表",
+      "GatherUserTaskList": "发现策略",
       "GatherUserTaskUpdate": "更新任务",
       "GatherUserTaskDetail": "任务详情",
       "GatherUserTaskExecutionList": "任务执行列表"
