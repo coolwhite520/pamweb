@@ -9,6 +9,7 @@ import PermsRoute from './perms'
 import OpsRoutes from './ops'
 import AclRoutes from './acls'
 import AccountRoutes from './accounts'
+// import XPackRoutes from "./xpack"
 
 export default {
   path: '/console',
@@ -116,6 +117,16 @@ export default {
       },
       children: OpsRoutes
     }
+    // {
+    //   path: '/console/xpack',
+    //   component: empty,
+    //   name: 'JobCenter',
+    //   meta: {
+    //     title: 'xpack',
+    //     icon: 'heart'
+    //   },
+    //   children: XPackRoutes
+    // }
   ]
 }
 
