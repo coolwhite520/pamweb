@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="never">
+  <el-card shadow="hover">
     <div slot="header" class="summary-header">
       <span class="header-title">{{ title }}</span>
     </div>
