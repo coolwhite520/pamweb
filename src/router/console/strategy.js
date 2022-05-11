@@ -3,6 +3,68 @@ import empty from '@/layout/empty'
 
 export default [
   {
+    path: 'gathered-user',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: i18n.t('xpack.GatherUser.GatherUserList'),
+      app: 'assets'
+    },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/accounts/GatheredUser/index'),
+        name: 'GatherUserListIndex',
+        meta: {
+          title: i18n.t('xpack.GatherUser.GatherUser'),
+          permissions: ['assets.view_gathereduser|xpack.view_gatherusertask']
+        }
+      },
+      {
+        path: '',
+        component: () => import('@/views/accounts/GatheredUser/GatheredUserList'),
+        name: 'GatherUserList',
+        hidden: true,
+        meta: {
+          title: i18n.t('xpack.GatherUser.GatherUserList'),
+          activeMenu: '/accounts/gathered-user'
+        }
+      },
+      {
+        path: 'tasks/:id',
+        component: () => import('@/views/accounts/GatheredUser/TaskDetail/index'),
+        name: 'GatherUserTaskDetail',
+        hidden: true,
+        meta: {
+          title: i18n.t('xpack.GatherUser.GatherUserTaskDetail'),
+          permissions: ['xpack.view_gatherusertask']
+        }
+      },
+      {
+        path: 'tasks/create',
+        component: () => import('@/views/accounts/GatheredUser/TaskCreateUpdate'),
+        name: 'GatherUserTaskCreate',
+        hidden: true,
+        meta: {
+          title: i18n.t('xpack.GatherUser.GatherUserTaskCreate'),
+          permissions: ['xpack.add_gatherusertask']
+        }
+      },
+      {
+        path: 'tasks/:id/update',
+        component: () => import('@/views/accounts/GatheredUser/TaskCreateUpdate'),
+        name: 'GatherUserTaskUpdate',
+        hidden: true,
+        meta: {
+          title: i18n.t('xpack.GatherUser.GatherUserTaskUpdate'),
+          action: 'update',
+          permissions: ['xpack.change_gatherusertask'],
+          activeMenu: '/accounts/gathered-user'
+        }
+      }
+    ]
+  },
+  {
     path: 'account-strategy',
     component: empty,
     redirect: '',
@@ -15,6 +77,65 @@ export default [
         name: 'AccountStrategyList',
         component: () => import('@/views/accounts/AccountStrategy/index'),
         meta: { title: i18n.t('route.AccountStrategyList') }
+      }
+    ]
+  },
+  {
+    path: 'backup',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan'),
+      app: 'assets',
+      resource: 'accountbackupplan'
+    },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanList'),
+        name: 'AccountBackupPlanIndex',
+        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') }
+      },
+      {
+        path: '',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanList.vue'),
+        name: 'AccountBackupPlanList',
+        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') },
+        hidden: true
+      },
+      {
+        path: 'create',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanCreateUpdate.vue'),
+        name: 'AccountBackupPlanCreate',
+        meta: {
+          title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlanCreate'),
+          action: 'create'
+        },
+        hidden: true
+      },
+      {
+        path: ':id/update',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanCreateUpdate.vue'),
+        name: 'AccountBackupPlanUpdate',
+        meta: {
+          title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlanUpdate'),
+          action: 'update'
+        },
+        hidden: true
+      },
+      {
+        path: ':id',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanDetail/index.vue'),
+        name: 'AccountBackupPlanDetail',
+        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') },
+        hidden: true
+      },
+      {
+        path: 'plan-execution/:id',
+        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanDetail/AccountBackupPlanExecution/AccountBackupPlanExecutionDetail/index.vue'),
+        name: 'AccountBackupPlanExecutionDetail',
+        meta: { title: i18n.t('xpack.AccountBackupPlan.ExecutionDetail') },
+        hidden: true
       }
     ]
   },
@@ -178,61 +299,68 @@ export default [
     ]
   },
   {
-    path: 'backup',
+    path: 'cmd-filters',
     component: empty,
     redirect: '',
     meta: {
-      title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan'),
-      app: 'assets',
-      resource: 'accountbackupplan'
+      resource: 'commandfilter',
+      permissions: ['assets.view_commandfilter']
     },
     children: [
       {
         path: '',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanList'),
-        name: 'AccountBackupPlanIndex',
-        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') }
-      },
-      {
-        path: '',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanList.vue'),
-        name: 'AccountBackupPlanList',
-        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') },
-        hidden: true
-      },
-      {
-        path: 'create',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanCreateUpdate.vue'),
-        name: 'AccountBackupPlanCreate',
-        meta: {
-          title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlanCreate'),
-          action: 'create'
-        },
-        hidden: true
+        name: 'CommandFilterList',
+        component: () => import('@/views/assets/CommandFilter/CommandFilterList.vue'),
+        meta: { title: i18n.t('route.CommandFilterList') }
       },
       {
         path: ':id/update',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanCreateUpdate.vue'),
-        name: 'AccountBackupPlanUpdate',
-        meta: {
-          title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlanUpdate'),
-          action: 'update'
-        },
-        hidden: true
+        component: () => import('@/views/assets/CommandFilter/CommandFilterCreateUpdate.vue'), // Parent router-view
+        name: 'CommandFilterUpdate',
+        hidden: true,
+        meta: { title: i18n.t('route.CommandFilterUpdate') }
+      },
+      {
+        path: 'create',
+        component: () => import('@/views/assets/CommandFilter/CommandFilterCreateUpdate.vue'), // Parent router-view
+        name: 'CommandFilterCreate',
+        hidden: true,
+        meta: { title: i18n.t('route.CommandFilterCreate') }
       },
       {
         path: ':id',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanDetail/index.vue'),
-        name: 'AccountBackupPlanDetail',
-        meta: { title: i18n.t('xpack.AccountBackupPlan.AccountBackupPlan') },
-        hidden: true
+        component: () => import('@/views/assets/CommandFilter/CommandFilterDetail'), // Parent router-view
+        name: 'CommandFilterDetail',
+        hidden: true,
+        meta: { title: i18n.t('route.CommandFilterDetail') }
+      }
+    ]
+  },
+  {
+    path: 'command-filter-rules',
+    component: empty,
+    hidden: true,
+    meta: {
+      resource: 'commandfilterrule'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/assets/CommandFilter/CommandFilterDetail/RulesCreateUpdate.vue'), // Parent router-view
+        name: 'CommandFilterRulesCreate',
+        meta: {
+          title: i18n.t('route.CommandFilterRulesCreate'),
+          activeMenu: '/console/assets/cmd-filters'
+        }
       },
       {
-        path: 'plan-execution/:id',
-        component: () => import('@/views/accounts/AccountBackupPlan/AccountBackupPlanDetail/AccountBackupPlanExecution/AccountBackupPlanExecutionDetail/index.vue'),
-        name: 'AccountBackupPlanExecutionDetail',
-        meta: { title: i18n.t('xpack.AccountBackupPlan.ExecutionDetail') },
-        hidden: true
+        path: ':id/update',
+        component: () => import('@/views/assets/CommandFilter/CommandFilterDetail/RulesCreateUpdate.vue'), // Parent router-view
+        name: 'CommandFilterRulesUpdate',
+        meta: {
+          title: i18n.t('route.CommandFilterRulesUpdate'),
+          activeMenu: '/console/assets/cmd-filters'
+        }
       }
     ]
   }

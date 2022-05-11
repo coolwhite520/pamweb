@@ -749,8 +749,8 @@
     "UserAclLists": "用户登录规则",
     "UserLoginACLUpdate": "更新用户登录规则",
     "UserAclDetail": "用户登录规则详情",
-    "AccountStrategyList": "账号管理策略",
-    "AssetAclList": "访问控制策略",
+    "AccountStrategyList": "账号管理",
+    "AssetAclList": "访问控制",
     "AssetAclCreate": "创建访问控制策略",
     "AssetAclUpdate": "更新访问控制策略",
     "AssetAclDetail": "资产访问控制策略详情",
@@ -1397,10 +1397,14 @@
       "TimerPeriod": "定时执行周期",
       "Username": "用户名"
     },
+    "AccountManagePlan": {
+      "ExcludeOthersPwd": "排他密码",
+      "OnceOnePwd": "一次一密"
+    },
     "AccountBackupPlan": {
       "Types": "类型",
       "Backup": "备份",
-      "AccountBackupPlan": "账号备份策略",
+      "AccountBackupPlan": "账号备份",
       "AccountBackupPlanCreate": "创建账号备份策略",
       "AccountBackupPlanUpdate": "更新账号备份策略",
       "ExecutionDetail": "执行详情",
@@ -1478,7 +1482,7 @@
     "Expired": "过期时间",
     "GatherUser": {
       "GatherUser": "账号发现",
-      "GatherUserList": "账号发现",
+      "GatherUserList": "已发现列表",
       "GatherUserTaskCreate": "创建任务",
       "GatherUserTaskList": "发现策略",
       "GatherUserTaskUpdate": "更新任务",

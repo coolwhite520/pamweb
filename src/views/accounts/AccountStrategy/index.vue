@@ -16,13 +16,13 @@ export default {
         activeMenu: 'AssetChangeAuthPlanList',
         submenu: [
           {
-            title: this.$t('xpack.ChangeAuthPlan.AssetChangeAuthPlan'),
+            title: this.$t('xpack.AccountManagePlan.ExcludeOthersPwd'),
             name: 'AssetChangeAuthPlanList',
             hidden: () => !this.$hasPerm('xpack.view_changeauthplan'),
             component: () => import('@/views/accounts/ChangeAuthPlan/AssetChangeAuthPlan/ChangeAuthPlanList.vue')
           },
           {
-            title: this.$t('xpack.ChangeAuthPlan.AppChangeAuthPlan'),
+            title: this.$t('xpack.AccountManagePlan.OnceOnePwd'),
             name: 'AppChangeAuthPlanList',
             hidden: () => !this.$hasPerm('xpack.view_applicationchangeauthplan'),
             component: () => import('@/views/accounts/ChangeAuthPlan/AppChangeAuthPlan/AppChangeAuthPlanList.vue')
