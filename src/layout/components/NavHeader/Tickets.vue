@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .el-link {
-  color: #606266 !important;
+  color: #d1d5d5 !important;
   font-size: 13px;
   font-weight: 400
 }

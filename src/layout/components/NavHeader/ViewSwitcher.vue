@@ -92,7 +92,7 @@ export default {
   }
   &>>> .el-icon-arrow-down {
     font-size: 13px;
-    color: #606266;
+    color: #d1d5d5;
   }
 }
 
@@ -122,7 +122,7 @@ export default {
   padding-left: 12px;
   font-size: 14px;
   vertical-align: unset;
-  color: #606266!important;
+  color: #d1d5d5!important;
 }
 .icons {
   display: block;

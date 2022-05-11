@@ -3,7 +3,7 @@
     <el-dropdown :show-timeout="50" @command="handleClick">
       <span class="el-dropdown-link">
         <el-avatar :src="avatarUrl" class="header-avatar" />
-        {{ currentUser.name }}
+        <span style="color: #d1d5d5">{{ currentUser.name }}</span>
         <i class="el-icon-arrow-down el-icon--right" />
       </span>
       <el-dropdown-menu slot="dropdown">
