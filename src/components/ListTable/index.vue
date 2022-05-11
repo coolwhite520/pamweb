@@ -76,7 +76,9 @@ export default {
           defaults[k] = defaults[k] && !this.currentOrgIsRoot
         }
       }
-      return Object.assign(defaults, this.headerActions)
+      const actions2 = Object.assign(defaults, this.headerActions)
+      console.log({ actions2 })
+      return actions2
     },
     iTableConfig() {
       const config = deepmerge(this.tableConfig, {

@@ -1399,7 +1399,8 @@
     },
     "AccountManagePlan": {
       "ExcludeOthersPwd": "排他密码",
-      "OnceOnePwd": "一次一密"
+      "OnceOnePwd": "一次一密",
+      "WeakPasswordCheck": "弱密码检测"
     },
     "AccountBackupPlan": {
       "Types": "类型",

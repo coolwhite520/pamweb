@@ -6,10 +6,9 @@
 import { GenericListTable } from '@/layout/components'
 import { DetailFormatter } from '@/components/TableFormatters'
 import { openTaskPage } from '@/utils/jms'
-import { AppPlanDatabase } from '@/views/applications/const'
 
 export default {
-  name: 'AppChangeAuthPlanList',
+  name: 'OnceOnePwdList',
   components: {
     GenericListTable
   },
@@ -17,33 +16,32 @@ export default {
     const vm = this
     return {
       tableConfig: {
-        permissions: {
-          'app': 'xpack',
-          'resource': 'applicationchangeauthplan'
-        },
-        url: '/api/v1/xpack/change-auth-plan/app-plan/',
+        url: '/api/v1/xpack/change-auth-plan/plan/',
         columns: [
-          'name', 'password_strategy_display', 'is_periodic', 'periodic_display',
-          'run_times', 'comment', 'org_name', 'actions'
+          'name', 'username', 'assets_amount', 'nodes_amount', 'password_strategy_display',
+          'is_periodic', 'periodic_display', 'run_times', 'comment', 'org_name', 'actions'
         ],
         columnsShow: {
           min: ['name', 'actions'],
-          default: [
-            'name', 'password_strategy_display', 'is_periodic',
-            'periodic_display', 'run_times', 'actions'
-          ]
+          default: ['name', 'username', 'password_strategy_display', 'is_periodic', 'periodic_display', 'run_times', 'actions']
         },
         columnsMeta: {
           name: {
             formatter: DetailFormatter,
             formatterArgs: {
-              route: 'AppChangeAuthPlanDetail'
+              route: 'AssetChangeAuthPlanDetail'
             }
           },
-          systemuser_display: {
-            label: vm.$t('xpack.ChangeAuthPlan.SystemUser'),
-            width: '300px',
+          username: {
             showOverflowTooltip: true
+          },
+          assets_amount: {
+            label: vm.$t('xpack.ChangeAuthPlan.AssetAmount'),
+            width: '80px'
+          },
+          nodes_amount: {
+            label: vm.$t('xpack.ChangeAuthPlan.NodeAmount'),
+            width: '80px'
           },
           password_strategy_display: {
             label: vm.$t('xpack.ChangeAuthPlan.PasswordStrategy'),
@@ -67,9 +65,9 @@ export default {
             width: '87px',
             formatter: DetailFormatter,
             formatterArgs: {
-              route: 'AppChangeAuthPlanDetail',
+              route: 'AssetChangeAuthPlanDetail',
               routeQuery: {
-                activeTab: 'AppChangeAuthPlanExecutionList'
+                activeTab: 'AssetChangeAuthPlanExecutionList'
               }
             }
           },
@@ -80,34 +78,20 @@ export default {
             width: '164px',
             formatterArgs: {
               onClone: ({ row }) => {
-                vm.$router.push({
-                  name: 'AppChangeAuthPlanCreate',
-                  query: {
-                    clone_from: row.id,
-                    category: row.category.toLowerCase(),
-                    type: row.type.toLowerCase()
-                  }
-                })
+                vm.$router.push({ name: 'AssetChangeAuthPlanCreate', query: { clone_from: row.id }})
               },
               onUpdate: ({ row }) => {
-                vm.$router.push({
-                  name: 'AppChangeAuthPlanUpdate',
-                  params: { id: row.id },
-                  query: {
-                    category: row.category.toLowerCase(),
-                    type: row.type.toLowerCase()
-                  }
-                })
+                vm.$router.push({ name: 'AssetChangeAuthPlanUpdate', params: { id: row.id }})
               },
               extraActions: [
                 {
                   title: vm.$t('xpack.Execute'),
                   name: 'execute',
-                  can: this.$hasPerm('xpack.add_applicationchangeauthplanexecution'),
+                  can: this.$hasPerm('xpack.add_changeauthplanexecution'),
                   type: 'info',
                   callback: function({ row }) {
                     this.$axios.post(
-                      `/api/v1/xpack/change-auth-plan/app-plan-execution/`,
+                      `/api/v1/xpack/change-auth-plan/plan-execution/`,
                       { plan: row.id }
                     ).then(res => {
                       openTaskPage(res['task'])
@@ -120,21 +104,15 @@ export default {
         }
       },
       headerActions: {
+        createTitle: '关联账号',
         hasRefresh: true,
         hasExport: false,
         hasImport: false,
         hasMoreActions: false,
-        searchConfig: {
-          getUrlQuery: false
-        },
-        moreCreates: {
-          callback: (option) => {
-            vm.$router.push({ name: 'AppChangeAuthPlanCreate', query: {
-              category: option.category.toLowerCase(),
-              type: option.name.toLowerCase()
-            }})
-          },
-          dropdown: AppPlanDatabase
+        createRoute: () => {
+          return {
+            name: 'AssetChangeAuthPlanCreate'
+          }
         }
       }
     }

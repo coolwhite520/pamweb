@@ -13,20 +13,20 @@ export default {
   data() {
     return {
       config: {
-        activeMenu: 'AssetChangeAuthPlanList',
+        activeMenu: 'ExcludeOthersList',
         submenu: [
           {
             title: this.$t('xpack.AccountManagePlan.ExcludeOthersPwd'),
-            name: 'AssetChangeAuthPlanList',
+            name: 'ExcludeOthersList',
             hidden: () => !this.$hasPerm('xpack.view_changeauthplan'),
-            component: () => import('@/views/accounts/ChangeAuthPlan/AssetChangeAuthPlan/ChangeAuthPlanList.vue')
+            component: () => import('@/views/accounts/AccountStrategy/ExcludeOthers/ExcludeOthersList.vue')
           },
           {
             title: this.$t('xpack.AccountManagePlan.OnceOnePwd'),
-            name: 'AppChangeAuthPlanList',
+            name: 'OnceOnePwdList',
             hidden: () => !this.$hasPerm('xpack.view_applicationchangeauthplan'),
-            component: () => import('@/views/accounts/ChangeAuthPlan/AppChangeAuthPlan/AppChangeAuthPlanList.vue')
-          }
+            component: () => import('@/views/accounts/AccountStrategy/OnceOnePwd/OnceOnePwdList.vue')
+          },
         ]
       }
     }

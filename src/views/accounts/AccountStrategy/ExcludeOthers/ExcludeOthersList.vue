@@ -8,7 +8,7 @@ import { DetailFormatter } from '@/components/TableFormatters'
 import { openTaskPage } from '@/utils/jms'
 
 export default {
-  name: 'AssetChangeAuthPlanList',
+  name: 'ExcludeOthersList',
   components: {
     GenericListTable
   },
@@ -104,6 +104,7 @@ export default {
         }
       },
       headerActions: {
+        createTitle: '关联账号',
         hasRefresh: true,
         hasExport: false,
         hasImport: false,

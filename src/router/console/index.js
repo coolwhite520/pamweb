@@ -9,6 +9,7 @@ import PermsRoute from './perms'
 import OpsRoutes from './ops'
 import StrategyRoutes from './strategy'
 import AccountRoutes from './accounts'
+import CheckTaskRoutes from './checktask'
 // import XPackRoutes from "./xpack"
 
 export default {
@@ -95,6 +96,16 @@ export default {
         icon: 'fort-awesome'
       },
       children: StrategyRoutes
+    },
+    {
+      path: '/console/checker',
+      component: empty,
+      name: 'Checker',
+      meta: {
+        title: '检测任务',
+        icon: 'umbrella'
+      },
+      children: CheckTaskRoutes
     },
     {
       path: '/console/ops',
