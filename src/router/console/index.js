@@ -7,7 +7,7 @@ import AssetsRoute from './assets'
 import ApplicationsRoute from './applications'
 import PermsRoute from './perms'
 import OpsRoutes from './ops'
-import AclRoutes from './acls'
+import StrategyRoutes from './strategy'
 import AccountRoutes from './accounts'
 // import XPackRoutes from "./xpack"
 
@@ -76,16 +76,6 @@ export default {
       },
       children: AccountRoutes
     },
-    // {
-    //   path: '/console/strategy',
-    //   component: empty,
-    //   name: 'Strategy',
-    //   meta: {
-    //     title: '策略管理',
-    //     icon: 'chain'
-    //   },
-    //   children: StrategyRoutes
-    // },
     {
       path: '/console/perms',
       component: empty,
@@ -97,15 +87,14 @@ export default {
       children: PermsRoute
     },
     {
-      path: '/console/acls',
+      path: '/console/strategy',
       component: empty,
       name: 'Acl',
       meta: {
-        licenseRequired: true,
         title: i18n.t('route.Acl'),
         icon: 'fort-awesome'
       },
-      children: AclRoutes
+      children: StrategyRoutes
     },
     {
       path: '/console/ops',

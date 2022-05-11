@@ -108,6 +108,7 @@ export default {
       }
     },
     getPropActiveTab() {
+      console.log({ tabIndices: this.tabIndices })
       let activeTab = ''
 
       const preActiveTabs = [
@@ -115,13 +116,15 @@ export default {
         this.$cookie.get(ACTIVE_TAB_KEY),
         this.activeMenu
       ]
-
+      console.log({ preActiveTabs })
       for (const preTab of preActiveTabs) {
-        const currentTab = typeof preTab === 'object' ? preTab.name : preTab
-        for (const tabName of this.tabIndices) {
-          const currentTabName = tabName?.name || ''
-          if (currentTab?.toLowerCase() === currentTabName?.toLowerCase()) {
-            return currentTabName
+        if (preTab) {
+          const currentTab = typeof preTab === 'object' ? preTab.name : preTab
+          for (const tabName of this.tabIndices) {
+            const currentTabName = tabName?.name || ''
+            if (currentTab?.toLowerCase() === currentTabName?.toLowerCase()) {
+              return currentTabName
+            }
           }
         }
       }

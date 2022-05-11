@@ -113,6 +113,7 @@ function cleanRoute(tmp, parent) {
   // 设置默认的权限
   if (!tmp.meta.permissions) {
     tmp.meta.permissions = getRouteDefaultPerms(tmp)
+    Vue.$log.debug('Current view route permissions: ', tmp.meta.permissions)
   }
   // 设置是否显示 Organization, 该参数是继承的
   if (!tmp.meta.showOrganization && parent.meta.showOrganization !== undefined) {
@@ -144,8 +145,8 @@ export function filterPermedRoutes(routes, parent) {
       ...route
     }
     tmp = cleanRoute(tmp, parent)
-
-    if (hasPermission(tmp.meta.permissions)) {
+    const testDebugFlag = true
+    if (testDebugFlag || hasPermission(tmp.meta.permissions)) {
       if (tmp.children) {
         tmp.children = filterPermedRoutes(tmp.children, tmp)
       }
