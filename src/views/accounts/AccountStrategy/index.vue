@@ -27,6 +27,12 @@ export default {
             hidden: () => !this.$hasPerm('xpack.view_applicationchangeauthplan'),
             component: () => import('@/views/accounts/AccountStrategy/OnceOnePwd/OnceOnePwdList.vue')
           },
+          {
+            title: this.$t('xpack.AccountManagePlan.AutoCheckList'),
+            name: 'AutoCheckList',
+            hidden: () => !this.$hasPerm('xpack.view_applicationchangeauthplan'),
+            component: () => import('@/views/accounts/AccountStrategy/AutoCheck/AutoCheckList.vue')
+          }
         ]
       }
     }

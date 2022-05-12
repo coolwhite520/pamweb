@@ -1,10 +1,12 @@
 <template>
-  <DataActions
-    v-if="hasLeftActions"
-    :actions="iActions"
-    v-bind="$attrs"
-    class="header-action"
-  />
+  <div>
+    <DataActions
+      v-if="hasLeftActions"
+      :actions="iActions"
+      v-bind="$attrs"
+      class="header-action"
+    />
+  </div>
 </template>
 
 <script>
@@ -21,6 +23,11 @@ export default {
     DataActions
   },
   props: {
+    // add by panda
+    createAction: {
+      type: String,
+      default: ''
+    },
     hasLeftActions: defaultTrue,
     hasCreate: defaultTrue,
     canCreate: defaultTrue,
@@ -84,7 +91,7 @@ export default {
         type: 'primary',
         has: this.hasCreate && !this.moreCreates,
         can: this.canCreate,
-        callback: this.handleCreate
+        callback: this.createAction === 'popDialog' ? null : this.handleCreate
       }
     ]
     if (this.moreCreates) {
@@ -102,6 +109,7 @@ export default {
     }
     const vm = this
     return {
+      dialogVisible: false,
       defaultActions: defaultActions,
       defaultMoreActions: [
         {

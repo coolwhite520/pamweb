@@ -81,7 +81,7 @@ export default {
     position: relative;
     height: 55px;
     overflow: hidden;
-    background: #304152;
+    background: #203558;
     .navbar-left {
       float: left;
       .left-item {

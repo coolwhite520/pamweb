@@ -1,13 +1,5 @@
 <template>
   <div class="asset-select-dialog">
-    <Select2
-      ref="select2"
-      v-model="select2Config.value"
-      v-bind="select2Config"
-      @input="onInputChange"
-      @focus.stop="handleFocus"
-      v-on="$listeners"
-    />
     <Dialog
       v-if="dialogVisible"
       :title="this.$t('assets.Assets')"
@@ -18,25 +10,21 @@
       @confirm="handleConfirm"
       @cancel="handleCancel"
     >
-      <TreeTable
-        ref="ListPage"
-        :tree-setting="treeSetting"
-        :table-config="tableConfig"
-        :header-actions="headerActions"
-      />
+      <AssetAccountList />
     </Dialog>
   </div>
 </template>
 
 <script>
-import TreeTable from '@/components/TreeTable'
+
 import { DetailFormatter } from '@/components/TableFormatters'
-import Select2 from '@/components/FormFields/Select2'
+// import Select2 from '@/components/FormFields/Select2'
 import Dialog from '@/components/Dialog'
+import AssetAccountList from './AssetAccountList'
 
 export default {
-  componentName: 'AssetSelect',
-  components: { TreeTable, Select2, Dialog },
+  componentName: 'AssetAccountSelect',
+  components: { AssetAccountList, Dialog },
   props: {
     value: {
       type: Array,
@@ -135,8 +123,10 @@ export default {
     }
   },
   methods: {
+    handleClickShowDialog() {
+      this.dialogVisible = true
+    },
     handleFocus() {
-      console.log('cool')
       this.$refs.select2.selectRef.blur()
       this.dialogVisible = true
     },

@@ -33,7 +33,6 @@
           </template>
         </el-dropdown-menu>
       </el-dropdown>
-
       <el-button
         v-else
         :key="action.name"
@@ -93,6 +92,7 @@ export default {
       return callback(option)
     },
     handleClick(action) {
+      console.log(action)
       if (action && action.callback) {
         action.callback(action)
       } else {
