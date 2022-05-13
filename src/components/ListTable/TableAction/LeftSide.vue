@@ -23,11 +23,6 @@ export default {
     DataActions
   },
   props: {
-    // add by panda
-    createAction: {
-      type: String,
-      default: ''
-    },
     hasLeftActions: defaultTrue,
     hasCreate: defaultTrue,
     canCreate: defaultTrue,
@@ -91,7 +86,7 @@ export default {
         type: 'primary',
         has: this.hasCreate && !this.moreCreates,
         can: this.canCreate,
-        callback: this.createAction === 'popDialog' ? null : this.handleCreate
+        callback: this.handleCreate
       }
     ]
     if (this.moreCreates) {

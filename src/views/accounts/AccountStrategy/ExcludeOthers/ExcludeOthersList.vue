@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <GenericListTable :table-config="tableConfig" :header-actions="headerActions" />
-  </div>
+  <GenericListTable :table-config="tableConfig" :header-actions="headerActions" />
 </template>
 
 <script>
@@ -107,7 +105,6 @@ export default {
       },
       headerActions: {
         createTitle: '关联账号',
-        createAction: 'popDialog',
         hasRefresh: true,
         hasExport: false,
         hasImport: false,

@@ -3,6 +3,15 @@ import empty from '@/layout/empty'
 
 export default [
   {
+    path: 'danger',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: '威胁大盘',
+      app: 'assets'
+    }
+  },
+  {
     path: 'gathered-user',
     component: empty,
     redirect: '',
