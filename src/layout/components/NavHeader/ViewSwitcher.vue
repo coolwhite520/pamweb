@@ -12,7 +12,7 @@
     >
       <template slot="title">
         <span class="title-label">
-          <i class="fa fa-bars" />
+          <i class="el-icon-menu" />
           <span>{{ $t('common.nav.View') }}</span>
         </span>
       </template>

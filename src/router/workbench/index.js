@@ -12,7 +12,7 @@ export default {
     title: i18n.t('common.nav.Workbench'),
     type: 'view',
     view: 'workbench',
-    icon: 'el-icon-user-solid',
+    icon: 'el-icon-mouse',
     showNavSwitcher: true,
     showOrganization: true,
     permissions: ['rbac.view_workbench']

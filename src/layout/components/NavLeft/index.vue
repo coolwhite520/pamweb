@@ -9,7 +9,8 @@
         <Organization class="organization" />
       </div>
       <div class="nav-title" :class="{'collapsed': isCollapse}">
-        {{ isTitle }}
+        <i v-if="!isCollapse" :class="isIcon">&nbsp;{{ isTitle }}</i>
+        <span v-else>{{ isTitle }}</span>
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -100,6 +101,9 @@ export default {
     },
     isTitle() {
       return this.currentViewRoute.meta?.title || ''
+    },
+    isIcon() {
+      return this.currentViewRoute.meta?.icon || ''
     }
   },
   methods: {

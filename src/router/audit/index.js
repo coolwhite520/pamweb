@@ -12,7 +12,7 @@ export default {
   redirect: '/audit/dashboard',
   meta: {
     title: i18n.t('common.nav.Audits'),
-    icon: 'el-icon-s-claim',
+    icon: 'el-icon-coordinate',
     showNavSwitcher: true,
     permissions: ['rbac.view_audit'],
     view: 'audit'
