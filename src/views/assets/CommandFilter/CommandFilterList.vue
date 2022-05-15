@@ -90,7 +90,8 @@ export default {
   },
   computed: {
     title() {
-      return this.$t('assets.CommandFilterHelpMessage')
+      return ''
+      // return this.$t('assets.CommandFilterHelpMessage')
     }
   }
 }

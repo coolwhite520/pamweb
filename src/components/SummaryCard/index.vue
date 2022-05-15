@@ -1,5 +1,5 @@
 <template>
-  <el-card shadow="hover">
+  <el-card shadow="hover" class="my-card">
     <div slot="header" class="summary-header">
       <span class="header-title">{{ title }}</span>
     </div>
@@ -74,4 +74,17 @@ export default {
   .disabled-link {
     color: #428bca;
   }
+</style>
+<style lang="css" scoped>
+.el-card /deep/{
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.el-card:hover /deep/  {
+  box-shadow: 5px 0 10px 1px #404e69;
+}
+.el-card /deep/ .el-card__header {
+  background-color: #38507b;
+  color: white;
+}
 </style>

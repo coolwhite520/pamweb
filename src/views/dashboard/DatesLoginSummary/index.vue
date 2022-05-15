@@ -1,5 +1,5 @@
 <template>
-  <div class="white-bg dashboard-header print-margin">
+  <div class="white-bg dashboard-header print-margin my-style">
     <el-row>
       <el-col :md="12" :sm="24">
         <h2>{{ $t('dashboard.LoginOverview') }}</h2>
@@ -76,5 +76,11 @@ export default {
       margin-top: 20px;
     }
   }
-
+  .my-style {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .my-style:hover {
+    box-shadow: 5px 0 10px 1px #404e69;
+  }
 </style>

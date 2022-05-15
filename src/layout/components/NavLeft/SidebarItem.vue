@@ -107,3 +107,27 @@ export default {
   }
 }
 </script>
+<style lang="css" scoped>
+
+/deep/ .el-submenu__title:hover i:not(:last-child){
+  color: white;
+  animation: fly .8s ease 1;
+}
+
+/deep/ .el-menu-item:hover i:not(:last-child){
+  color: white;
+  animation: fly .8s ease 1;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(800%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>
