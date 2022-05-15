@@ -9,8 +9,8 @@
         <Organization class="organization" />
       </div>
       <div class="nav-title" :class="{'collapsed': isCollapse}">
-        <i v-if="!isCollapse" :class="isIcon">&nbsp;{{ isTitle }}</i>
-        <span v-else>{{ isTitle }}</span>
+        <i v-if="!isCollapse" :class="isIcon">&nbsp;<b>{{ isTitle }}</b></i>
+        <span v-else><b>{{ isTitle }}</b></span>
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
