@@ -4,8 +4,9 @@ export const CHROME = 'chrome'
 export const MYSQL_WORKBENCH = 'mysql_workbench'
 export const VMWARE_CLIENT = 'vmware_client'
 export const CUSTOM = 'custom'
-
-export const ALL_TYPES = [CHROME, MYSQL_WORKBENCH, VMWARE_CLIENT, CUSTOM]
+// add by panda
+// export const ALL_TYPES = [CHROME, MYSQL_WORKBENCH, VMWARE_CLIENT, CUSTOM]
+export const ALL_TYPES = [CHROME, MYSQL_WORKBENCH, CUSTOM]
 
 export const REMOTE_APP_TYPE_FIELDS_MAP = {
   [CHROME]: ['asset', 'path', 'chrome_target', 'chrome_username', 'chrome_password'],

@@ -81,8 +81,8 @@ export default {
             ...ApplicationSystemUserTypes
           ]
         }
-      },
-      helpMessage: this.$t('assets.SystemUserListHelpMessage')
+      }
+      // helpMessage: this.$t('assets.SystemUserListHelpMessage')
     }
   }
 }

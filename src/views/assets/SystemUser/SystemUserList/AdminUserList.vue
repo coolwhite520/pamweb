@@ -68,8 +68,8 @@ export default {
             }
           }
         }
-      },
-      helpMessage: this.$t('assets.AdminUserListHelpMessage')
+      }
+      // helpMessage: this.$t('assets.AdminUserListHelpMessage')
     }
   }
 }

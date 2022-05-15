@@ -26,21 +26,21 @@ export default {
     summaryItems() {
       return [
         {
-          title: this.$t('dashboard.UsersTotal'),
-          body: {
-            route: { name: 'UserList' },
-            count: this.counter.total_count_users,
-            comment: this.$t('dashboard.UsersTotal'),
-            disabled: !this.$hasPerm('users.view_user')
-          }
-        },
-        {
           title: this.$t('dashboard.AssetsTotal'),
           body: {
             route: { name: 'AssetList' },
             count: this.counter.total_count_assets,
             comment: this.$t('dashboard.AssetsTotal'),
             disabled: !this.$hasPerm('assets.view_asset')
+          }
+        },
+        {
+          title: this.$t('dashboard.UsersTotal'),
+          body: {
+            route: { name: 'UserList' },
+            count: this.counter.total_count_users,
+            comment: this.$t('dashboard.UsersTotal'),
+            disabled: !this.$hasPerm('users.view_user')
           }
         },
         {

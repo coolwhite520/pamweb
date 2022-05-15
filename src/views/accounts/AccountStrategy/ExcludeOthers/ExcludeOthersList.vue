@@ -1,16 +1,22 @@
 <template>
-  <GenericListTable :table-config="tableConfig" :header-actions="headerActions" />
+  <div>
+    <GenericListTable :table-config="tableConfig" :header-actions="headerActions" />
+    <GenericListTableDialog
+      :visible.sync="GenericListTableDialogConfig.visible"
+      v-bind="GenericListTableDialogConfig"
+    />
+  </div>
 </template>
 
 <script>
-import { GenericListTable } from '@/layout/components'
-import { DetailFormatter } from '@/components/TableFormatters'
+import { GenericListTable, GenericListTableDialog } from '@/layout/components'
+import { ChoicesFormatter, DetailFormatter } from '@/components/TableFormatters'
 import { openTaskPage } from '@/utils/jms'
 
 export default {
   name: 'ExcludeOthersList',
   components: {
-    GenericListTable
+    GenericListTable, GenericListTableDialog
   },
   data() {
     const vm = this
@@ -105,10 +111,101 @@ export default {
       },
       headerActions: {
         createTitle: '关联账号',
+        buttonCreateCallback(obj) {
+          vm.GenericListTableDialogConfig.visible = true
+          vm.GenericListTableDialogConfig.tableConfig.url = `/api/v1/assets/assets/${vm.object.id}/perm-user-groups/${obj.id}/permissions/`
+        },
         hasRefresh: true,
         hasExport: false,
         hasImport: false,
         hasMoreActions: false
+      },
+      GenericListTableDialogConfig: {
+        title: '资产账号',
+        visible: false,
+        width: '60%',
+        tableConfig: {
+          url: '',
+          columns: [
+            'name',
+            'users_amount', 'user_groups_amount', 'assets_amount', 'nodes_amount',
+            'is_valid', 'is_active', 'date_expired', 'comment', 'org_name', 'created_by', 'date_created'
+          ],
+          columnsShow: {
+            min: ['name'],
+            default: [
+              'name', 'is_valid', 'created_by', 'date_created'
+            ]
+          },
+          columnsMeta: {
+            name: {
+              formatterArgs: {
+                route: 'AssetPermissionDetail'
+              },
+              showOverflowTooltip: true
+            },
+            users_amount: {
+              label: this.$t('perms.User'),
+              width: '60px',
+              formatter: DetailFormatter,
+              formatterArgs: {
+                route: 'AssetPermissionDetail',
+                routeQuery: {
+                  activeTab: 'AssetPermissionUser'
+                }
+              }
+            },
+            from_ticket: {
+              width: 100,
+              formatter: ChoicesFormatter,
+              formatterArgs: {
+                showFalse: false
+              }
+            },
+            created_by: {
+              showOverflowTooltip: true
+            },
+            user_groups_amount: {
+              label: this.$t('perms.UserGroups'),
+              width: '100px',
+              formatter: DetailFormatter,
+              formatterArgs: {
+                route: 'AssetPermissionDetail',
+                routeQuery: {
+                  activeTab: 'AssetPermissionUser'
+                }
+              }
+            },
+            assets_amount: {
+              label: this.$t('perms.Asset'),
+              width: '60px',
+              formatter: DetailFormatter,
+              formatterArgs: {
+                route: 'AssetPermissionDetail',
+                routeQuery: {
+                  activeTab: 'AssetPermissionAsset'
+                }
+              }
+            },
+            nodes_amount: {
+              label: this.$t('perms.Node'),
+              width: '60px',
+              formatter: DetailFormatter,
+              formatterArgs: {
+                route: 'AssetPermissionDetail',
+                routeQuery: {
+                  activeTab: 'AssetPermissionAsset'
+                }
+              }
+            }
+          }
+        },
+        headerActions: {
+          hasImport: false,
+          hasExport: false,
+          hasLeftActions: false,
+          hasColumnSetting: false
+        }
       }
     }
   }

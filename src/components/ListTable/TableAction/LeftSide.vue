@@ -32,6 +32,11 @@ export default {
         return this.$route.name.replace('List', 'Create')
       }
     },
+    // add by panda
+    buttonCreateCallback: {
+      type: [Function],
+      default: null
+    },
     createInNewPage: {
       type: Boolean,
       default: false
@@ -161,6 +166,10 @@ export default {
   },
   methods: {
     handleCreate() {
+      if (this.buttonCreateCallback) {
+        this.buttonCreateCallback()
+        return
+      }
       let route
       if (typeof this.createRoute === 'string') {
         route = { name: this.createRoute }

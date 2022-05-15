@@ -45,43 +45,43 @@ export default [
       }
     ]
   },
-  {
-    path: 'domains',
-    component: empty,
-    redirect: '',
-    meta: {
-      permissions: ['assets.view_domain']
-    },
-    children: [
-      {
-        path: '',
-        name: 'DomainList',
-        component: () => import('@/views/assets/Domain/DomainList.vue'),
-        meta: { title: i18n.t('route.DomainList') }
-      },
-      {
-        path: 'create',
-        name: 'DomainCreate',
-        component: () => import('@/views/assets/Domain/DomainCreateUpdate.vue'),
-        hidden: true,
-        meta: { title: i18n.t('route.DomainCreate') }
-      },
-      {
-        path: ':id/update',
-        name: 'DomainUpdate',
-        component: () => import('@/views/assets/Domain/DomainCreateUpdate.vue'),
-        hidden: true,
-        meta: { title: i18n.t('route.DomainUpdate') }
-      },
-      {
-        path: ':id',
-        name: 'DomainDetail',
-        component: () => import('@/views/assets/Domain/DomainDetail'),
-        hidden: true,
-        meta: { title: i18n.t('route.DomainDetail') }
-      }
-    ]
-  },
+  // {
+  //   path: 'domains',
+  //   component: empty,
+  //   redirect: '',
+  //   meta: {
+  //     permissions: ['assets.view_domain']
+  //   },
+  //   children: [
+  //     {
+  //       path: '',
+  //       name: 'DomainList',
+  //       component: () => import('@/views/assets/Domain/DomainList.vue'),
+  //       meta: { title: i18n.t('route.DomainList') }
+  //     },
+  //     {
+  //       path: 'create',
+  //       name: 'DomainCreate',
+  //       component: () => import('@/views/assets/Domain/DomainCreateUpdate.vue'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.DomainCreate') }
+  //     },
+  //     {
+  //       path: ':id/update',
+  //       name: 'DomainUpdate',
+  //       component: () => import('@/views/assets/Domain/DomainCreateUpdate.vue'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.DomainUpdate') }
+  //     },
+  //     {
+  //       path: ':id',
+  //       name: 'DomainDetail',
+  //       component: () => import('@/views/assets/Domain/DomainDetail'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.DomainDetail') }
+  //     }
+  //   ]
+  // },
   {
     path: 'gateways',
     component: empty,
@@ -108,6 +108,84 @@ export default [
           title: i18n.t('route.GatewayUpdate'),
           permissions: ['assets.change_gateway']
         }
+      }
+    ]
+  },
+  {
+    path: 'databases',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: i18n.t('route.DatabaseApp'),
+      resource: 'application'
+    },
+    children: [
+      {
+        path: '',
+        name: 'DatabaseAppList',
+        component: () => import('@/views/applications/DatabaseApp/DatabaseAppList'),
+        meta: { title: i18n.t('route.DatabaseApp') }
+      },
+      {
+        path: 'create',
+        name: 'DatabaseAppCreate',
+        component: () => import('@/views/applications/DatabaseApp/DatabaseAppCreateUpdate'),
+        hidden: true,
+        meta: { title: i18n.t('route.DatabaseAppCreate') }
+      },
+      {
+        path: ':id/update',
+        name: 'DatabaseAppUpdate',
+        component: () => import('@/views/applications/DatabaseApp/DatabaseAppCreateUpdate'),
+        hidden: true,
+        meta: { title: i18n.t('route.DatabaseAppUpdate') }
+      },
+      {
+        path: ':id',
+        name: 'DatabaseAppDetail',
+        component: () => import('@/views/applications/DatabaseApp/DatabaseAppDetail'),
+        hidden: true,
+        meta: { title: i18n.t('route.DatabaseAppDetail') }
+      }
+    ]
+  },
+  {
+    path: 'remote-apps',
+    redirect: '',
+    component: empty,
+    meta: {
+      title: i18n.t('route.RemoteApp'),
+      licenseRequired: true,
+      app: 'applications',
+      resource: 'application'
+    },
+    children: [
+      {
+        path: '',
+        name: 'RemoteAppList',
+        meta: { title: i18n.t('route.RemoteApp') },
+        component: () => import('@/views/applications/RemoteApp/RemoteAppList')
+      },
+      {
+        path: 'create',
+        name: 'RemoteAppCreate',
+        component: () => import('@/views/applications/RemoteApp/RemoteAppCreateUpdate'),
+        hidden: true,
+        meta: { title: i18n.t('route.RemoteApp') }
+      },
+      {
+        path: ':id/update',
+        name: 'RemoteAppUpdate',
+        component: () => import('@/views/applications/RemoteApp/RemoteAppCreateUpdate'),
+        hidden: true,
+        meta: { title: i18n.t('route.RemoteAppUpdate') }
+      },
+      {
+        path: ':id',
+        name: 'RemoteAppDetail',
+        component: () => import('@/views/applications/RemoteApp/RemoteAppDetail'),
+        hidden: true,
+        meta: { title: i18n.t('route.RemoteAppDetail') }
       }
     ]
   },

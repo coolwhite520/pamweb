@@ -79,42 +79,42 @@ export default [
         meta: { title: i18n.t('route.DatabaseAppDetail') }
       }
     ]
-  },
-  {
-    path: 'kubernetes',
-    component: empty,
-    meta: {
-      title: i18n.t('route.KubernetesApp'),
-      resource: 'application'
-    },
-    children: [
-      {
-        path: '',
-        name: 'KubernetesAppList',
-        component: () => import('@/views/applications/KubernetesApp/KubernetesAppList'),
-        meta: { title: i18n.t('route.KubernetesApp') }
-      },
-      {
-        path: 'create',
-        name: 'KubernetesAppCreate',
-        component: () => import('@/views/applications/KubernetesApp/KubernetesAppCreateUpdate'),
-        hidden: true,
-        meta: { title: i18n.t('route.KubernetesAppCreate') }
-      },
-      {
-        path: ':id/update',
-        name: 'KubernetesAppUpdate',
-        component: () => import('@/views/applications/KubernetesApp/KubernetesAppCreateUpdate'),
-        hidden: true,
-        meta: { title: i18n.t('route.KubernetesAppUpdate') }
-      },
-      {
-        path: ':id',
-        name: 'KubernetesAppDetail',
-        component: () => import('@/views/applications/KubernetesApp/KubernetesAppDetail'),
-        hidden: true,
-        meta: { title: i18n.t('route.KubernetesAppDetail') }
-      }
-    ]
   }
+  // {
+  //   path: 'kubernetes',
+  //   component: empty,
+  //   meta: {
+  //     title: i18n.t('route.KubernetesApp'),
+  //     resource: 'application'
+  //   },
+  //   children: [
+  //     {
+  //       path: '',
+  //       name: 'KubernetesAppList',
+  //       component: () => import('@/views/applications/KubernetesApp/KubernetesAppList'),
+  //       meta: { title: i18n.t('route.KubernetesApp') }
+  //     },
+  //     {
+  //       path: 'create',
+  //       name: 'KubernetesAppCreate',
+  //       component: () => import('@/views/applications/KubernetesApp/KubernetesAppCreateUpdate'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.KubernetesAppCreate') }
+  //     },
+  //     {
+  //       path: ':id/update',
+  //       name: 'KubernetesAppUpdate',
+  //       component: () => import('@/views/applications/KubernetesApp/KubernetesAppCreateUpdate'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.KubernetesAppUpdate') }
+  //     },
+  //     {
+  //       path: ':id',
+  //       name: 'KubernetesAppDetail',
+  //       component: () => import('@/views/applications/KubernetesApp/KubernetesAppDetail'),
+  //       hidden: true,
+  //       meta: { title: i18n.t('route.KubernetesAppDetail') }
+  //     }
+  //   ]
+  // }
 ]

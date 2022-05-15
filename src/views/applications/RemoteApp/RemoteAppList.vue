@@ -13,7 +13,7 @@ export default {
   data() {
     const vm = this
     return {
-      helpMessage: this.$t('assets.RemoteAppListHelpMessage'),
+      // helpMessage: this.$t('assets.RemoteAppListHelpMessage'),
       tableConfig: {
         url: '/api/v1/applications/applications/?category=remote_app',
         columns: [

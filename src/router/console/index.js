@@ -4,7 +4,7 @@ import empty from '@/layout/empty'
 
 import UsersRoute from './users'
 import AssetsRoute from './assets'
-import ApplicationsRoute from './applications'
+// import ApplicationsRoute from './applications'
 import PermsRoute from './perms'
 import OpsRoutes from './ops'
 import StrategyRoutes from './strategy'
@@ -56,16 +56,16 @@ export default {
       },
       children: AssetsRoute
     },
-    {
-      path: '/console/applications',
-      component: empty,
-      name: 'applications',
-      meta: {
-        title: i18n.t('route.Applications'),
-        icon: 'th'
-      },
-      children: ApplicationsRoute
-    },
+    // {
+    //   path: '/console/applications',
+    //   component: empty,
+    //   name: 'applications',
+    //   meta: {
+    //     title: i18n.t('route.Applications'),
+    //     icon: 'th'
+    //   },
+    //   children: ApplicationsRoute
+    // },
     {
       path: '/console/accounts',
       component: empty,
