@@ -6,7 +6,7 @@
     </slot>
     <div class="page-heading">
       <el-row :gutter="0">
-        <el-col :span="16" class="page-heading-left">
+        <el-col :span="16" class="page-heading-left" style="font-weight: bold">
           <slot><h2>{{ title }}</h2></slot>
         </el-col>
         <el-col :span="8">

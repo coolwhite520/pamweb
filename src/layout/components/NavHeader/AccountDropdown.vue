@@ -2,13 +2,13 @@
   <div class="header-tools header-profile">
     <el-dropdown :show-timeout="50" @command="handleClick">
       <span class="el-dropdown-link">
-        <el-avatar :src="avatarUrl" class="header-avatar" />
+        <el-avatar :src="avatarUrl" class="header-avatar" shape="square" />
         <span style="color: #d1d5d5">{{ currentUser.name }}</span>
         <i class="el-icon-arrow-down el-icon--right" />
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item icon="el-icon-user" command="profile">{{ $t('common.nav.Profile') }}</el-dropdown-item>
-<!--        <el-dropdown-item v-if="$hasPerm('authentication.view_accesskey')" icon="el-icon-key" command="apiKey">{{ $t('common.nav.APIKey') }}</el-dropdown-item>-->
+        <!--        <el-dropdown-item v-if="$hasPerm('authentication.view_accesskey')" icon="el-icon-key" command="apiKey">{{ $t('common.nav.APIKey') }}</el-dropdown-item>-->
         <el-dropdown-item icon="el-icon-magic-stick" command="tempPassword">{{ $t('common.nav.TempPassword') }}</el-dropdown-item>
         <el-dropdown-item divided command="logout"><svg-icon icon-class="logout" style="margin-right: 4px" />{{ $t('common.nav.Logout') }}</el-dropdown-item>
       </el-dropdown-menu>
@@ -63,8 +63,8 @@ export default {
 
 <style scoped>
   .header-avatar {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     margin-right: 5px;
     vertical-align: middle;
   }

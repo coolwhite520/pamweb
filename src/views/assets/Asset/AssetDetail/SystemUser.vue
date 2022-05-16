@@ -6,7 +6,7 @@
       </el-col>
       <el-col :md="8" :sm="24">
         <QuickActions type="primary" :actions="quickActions" />
-        <RelationCard ref="systemUserRelation" style="margin-top: 15px" v-bind="systemUserRelationConfig" />
+        <RelationCard ref="systemUserRelation" style="margin-top: 15px" v-bind="systemUserRelationConfig" type="primary" />
       </el-col>
     </el-row>
   </div>

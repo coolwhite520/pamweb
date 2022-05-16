@@ -10,7 +10,11 @@
       </div>
       <div class="nav-title" :class="{'collapsed': isCollapse}">
         <i v-if="!isCollapse" :class="isIcon">&nbsp;<b>{{ isTitle }}</b></i>
-        <span v-else><b>{{ isTitle }}</b></span>
+        <div v-else style="text-align: center; line-height: 55px;font-size: 18px;">
+          <el-tooltip :content="'当前位置--' + isTitle + '空间'" placement="right">
+            <i :class="isIcon" />
+          </el-tooltip>
+        </div>
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">

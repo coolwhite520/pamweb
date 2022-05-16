@@ -5,8 +5,8 @@
     </el-col>
     <el-col :md="10" :sm="24">
       <QuickActions type="primary" :actions="quickActions" />
-      <RelationCard ref="NodeRelation" v-perms="'assets.change_asset'" type="info" style="margin-top: 15px" v-bind="nodeRelationConfig" />
-      <LabelCard v-if="$hasPerm('assets.view_label')" type="warning" style="margin-top: 15px" v-bind="labelConfig" />
+      <RelationCard ref="NodeRelation" v-perms="'assets.change_asset'" style="margin-top: 15px" v-bind="nodeRelationConfig" />
+      <LabelCard v-if="$hasPerm('assets.view_label')" type="primary" style="margin-top: 15px" v-bind="labelConfig" />
     </el-col>
   </el-row>
 </template>

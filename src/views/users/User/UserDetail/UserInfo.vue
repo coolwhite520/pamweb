@@ -5,7 +5,7 @@
     </el-col>
     <el-col :md="10" :sm="24">
       <QuickActions :actions="quickActions" type="primary" />
-      <RelationCard v-bind="relationConfig" type="info" style="margin-top: 15px" />
+      <RelationCard v-bind="relationConfig" type="primary" style="margin-top: 15px" />
     </el-col>
   </el-row>
 </template>

@@ -102,16 +102,22 @@ export default {
   text-align: center;
   height: 70px;
   width: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   &:hover {
     color: inherit;
     i {
       color: inherit;
     }
+    border-radius: 5px;
+    box-shadow: 5px 0 10px 1px #d7dfef;
   }
   &:first-child {
     margin-left: 20px;
+    margin-right: 10px;
   }
   &:last-child {
+    margin-left: 10px;
     margin-right: 20px;
   }
 }
