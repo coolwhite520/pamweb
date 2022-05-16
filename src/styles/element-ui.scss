@@ -19,11 +19,11 @@
 //$--color-text-regular: #606266;
 
 
-$--color-primary: #1ab394;
-$--color-success: #1c84c6;
-$--color-info: #23c6c8;
-$--color-warning: #f8ac59;
-$--color-danger: #ed5565;
+//$--color-primary: #1c84c6;
+//$--color-success: #1ab394;
+//$--color-info: #23c6c8;
+//$--color-warning: #f8ac59;
+//$--color-danger: #ed5565;
 
 $--color-link: #1c84c6;
 $--color-link-highlight: #23527c;
@@ -160,20 +160,20 @@ td .el-button.el-button--mini {
 }
 
 .el-card.success > .el-card__header {
-  background-color: $--color-success;
-  border-color: $--color-success;
+  background-color: $--color-primary;
+  border-color: $--color-primary;
   color: #ffffff;
 }
 
 .el-card.info > .el-card__header {
-  background-color: $--color-info;
-  border-color: $--color-info;
+  background-color: $--color-primary;
+  border-color: $--color-primary;
   color: #ffffff;
 }
 
 .el-card.warning > .el-card__header {
-  background-color: $--color-warning;
-  border-color: $--color-warning;
+  background-color: $--color-primary;
+  border-color: $--color-primary;
   color: #ffffff;
 }
 

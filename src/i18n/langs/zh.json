@@ -434,10 +434,10 @@
     "nav": {
       "TempPassword": "临时密码",
       "APIKey": "API Key",
-      "Workbench": "工作视图",
+      "Workbench": "运维",
       "Navigation": "导航",
-      "Console": "管理视图",
-      "Audits": "审计视图",
+      "Console": "管理",
+      "Audits": "审计",
       "HomePage": "首页",
       "QuickAccess": "快速访问",
       "SwitchPage": "切换视图",
@@ -447,7 +447,7 @@
       "Profile": "个人信息",
       "Support": "支持",
       "UserPage": "用户视图",
-      "View": "视图切换",
+      "View": "工作空间",
       "EnterpriseEdition": "企业版"
     },
     "passwordOrPassphrase": "密码或密钥密码",

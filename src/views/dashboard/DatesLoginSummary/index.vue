@@ -80,7 +80,7 @@ export default {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
-  .my-style:hover {
-    box-shadow: 5px 0 10px 1px #404e69;
-  }
+  /*.my-style:hover {*/
+  /*  box-shadow: 5px 0 10px 1px #404e69;*/
+  /*}*/
 </style>

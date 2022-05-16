@@ -67,9 +67,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "src/styles/element-variables.scss";
   .primary {
-    background-color: #1ab394;
+    background-color: $--color-primary;
   }
 
 </style>

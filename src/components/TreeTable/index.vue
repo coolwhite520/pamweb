@@ -19,7 +19,8 @@
       <div :style="iShowTree?('display: flex;width: calc(100% - 20%);'):('display: flex;width:100%;')">
         <div class="mini">
           <div style="display:block" class="mini-button" @click="iShowTree=!iShowTree">
-            <i v-show="iShowTree" class="fa fa-angle-left fa-x" /><i v-show="!iShowTree" class="fa fa-angle-right fa-x" />
+            <i v-show="iShowTree" class="fa fa-angle-left fa-x" />
+            <i v-show="!iShowTree" class="fa fa-angle-right fa-x" />
           </div>
         </div>
         <div class="transition-box" style="width: calc(100% - 17px);">
@@ -108,13 +109,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/styles/element-variables.scss";
   .mini-button{
     width: 12px;
     float: right;
     text-align: center;
     padding: 5px 0;
-    background-color: #1ab394;
-    border-color: #1ab394;
+    background-color: $--color-primary;
+    border-color: $--color-primary;
     color: #FFFFFF;
     border-radius: 3px;
     line-height: 1.428;

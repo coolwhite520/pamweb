@@ -5,7 +5,7 @@
       <el-col :md="12" :sm="10">
         <echarts :options="userOption" :autoresize="true" />
         <div style="" class="print-display">
-          <div class="circle-icon" style="background: #1ab394;" />
+          <div class="circle-icon" style="background: #4A608EFF;" />
           <label>{{ $t('dashboard.ActiveUser') }}</label>
           <div class="circle-icon" style="background: #1C84C6;" />
           <label>{{ $t('dashboard.DisabledUser') }}</label>
@@ -16,7 +16,7 @@
       <el-col :md="12" :sm="10">
         <echarts :options="AssetOption" :autoresize="true" />
         <div style="" class="print-display">
-          <div class="circle-icon" style="background: #1ab394;" />
+          <div class="circle-icon" style="background: #4A608E;" />
           <label>{{ $t('dashboard.ActiveAsset') }}</label>
           <div class="circle-icon" style="background: #1C84C6;" />
           <label>{{ $t('dashboard.DisabledAsset') }}</label>

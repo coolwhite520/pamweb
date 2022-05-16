@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Switcher',
   props: {
@@ -34,11 +35,12 @@ export default {
       // $--color-danger: #ed5565;
       switch (this.type) {
         case 'primary':
-          return '#1ab394'
+          // return '#1ab394'
+          return '#4A608E'
         case 'danger':
           return '#ed5565'
         default:
-          return '#1ab394'
+          return '#4A608E'
       }
     },
     iValue: {

@@ -16,7 +16,7 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #1ab394 !default;
+$--color-primary: #4a608e !default;
 /// color|1|Background Color|4
 $--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
@@ -31,13 +31,13 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 /// color|1|Functional Color|1
-$--color-success: #1c84c6 !default;
+$--color-success: #67C23A !default;
 /// color|1|Functional Color|1
-$--color-warning: #f8ac59 !default;
+$--color-warning: #E6A23C !default;
 /// color|1|Functional Color|1
-$--color-danger: #ed5565 !default;
+$--color-danger: #F56C6C !default;
 /// color|1|Functional Color|1
-$--color-info: #23c6c8 !default;
+$--color-info: #909399 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -71,8 +71,8 @@ $--background-color-base: #F5F7FA !default;
 
 /* Link
 -------------------------- */
-$--link-color: $--color-success !default;
-$--link-hover-color: $--color-success-lighter !default;
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;
 
 /* Border
 -------------------------- */
@@ -112,11 +112,11 @@ $--font-size-large: 18px !default;
 /// fontSize|1|Font Size|0
 $--font-size-medium: 16px !default;
 /// fontSize|1|Font Size|0
-$--font-size-base: 13px !default;
+$--font-size-base: 14px !default;
 /// fontSize|1|Font Size|0
-$--font-size-small: 12px !default;
+$--font-size-small: 13px !default;
 /// fontSize|1|Font Size|0
-$--font-size-extra-small: 11px !default;
+$--font-size-extra-small: 12px !default;
 /// fontWeight|1|Font Weight|1
 $--font-weight-primary: 500 !default;
 /// fontWeight|1|Font Weight|1
@@ -128,7 +128,7 @@ $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbb !default;
 /* Size
 -------------------------- */
-$--size-base: 13px !default;
+$--size-base: 14px !default;
 
 /* z-index
 -------------------------- */
@@ -150,13 +150,13 @@ $--icon-color-base: $--color-info !default;
 /* Checkbox
 -------------------------- */
 /// fontSize||Font|1
-$--checkbox-font-size: 13px !default;
+$--checkbox-font-size: 14px !default;
 /// fontWeight||Font|1
 $--checkbox-font-weight: $--font-weight-primary !default;
 /// color||Color|0
 $--checkbox-font-color: $--color-text-regular !default;
-$--checkbox-input-height: 13px !default;
-$--checkbox-input-width: 13px !default;
+$--checkbox-input-height: 14px !default;
+$--checkbox-input-width: 14px !default;
 /// borderRadius||Border|2
 $--checkbox-border-radius: $--border-radius-small !default;
 /// color||Color|0
@@ -289,7 +289,7 @@ $--select-multiple-input-color: #666 !default;
 /// color||Color|0
 $--select-input-focus-border-color: $--color-primary !default;
 /// fontSize||Font|1
-$--select-input-font-size: 13px !default;
+$--select-input-font-size: 14px !default;
 
 $--select-option-color: $--color-text-regular !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
@@ -428,7 +428,7 @@ $--input-font-color: $--color-text-regular !default;
 /// height||Other|4
 $--input-width: 140px !default;
 /// height||Other|4
-$--input-height: 34px !default;
+$--input-height: 40px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 /// borderRadius||Border|2
@@ -963,6 +963,42 @@ $--avatar-large-size: 40px !default;
 $--avatar-medium-size: 36px !default;
 /// size|1|Avatar Size|3
 $--avatar-small-size: 28px !default;
+
+/* Empty
+-------------------------- */
+$--empty-padding: 40px 0 !default;
+$--empty-image-width: 160px !default;
+$--empty-description-margin-top: 20px !default;
+$--empty-bottom-margin-top: 20px !default;
+
+/* Descriptions
+-------------------------- */
+$--descriptions-header-margin-bottom: 20px !default;
+$--descriptions-title-font-size: 16px !default;
+$--descriptions-table-border: 1px solid $--border-color-lighter !default;
+$--descriptions-item-bordered-label-background: #fafafa !default;
+
+/* Skeleton 
+--------------------------*/
+$--skeleton-color: #f2f2f2 !default;
+$--skeleton-to-color: #e6e6e6 !default;
+
+/* Svg
+--------------- */
+$--svg-monochrome-grey: #DCDDE0 !default;
+
+/* Result
+-------------------------- */
+$--result-padding: 40px 30px !default;
+$--result-icon-font-size: 64px !default;
+$--result-title-font-size: 20px !default;
+$--result-title-margin-top: 20px !default;
+$--result-subtitle-margin-top: 10px !default;
+$--result-extra-margin-top: 30px !default;
+$--result-info-color: $--color-info !default;
+$--result-success-color: $--color-success !default;
+$--result-warning-color: $--color-warning !default;
+$--result-danger-color: $--color-danger !default;
 
 /* Break-point
 --------------------------*/
