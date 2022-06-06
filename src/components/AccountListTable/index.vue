@@ -59,11 +59,11 @@ export default {
         },
         columns: [
           'hostname', 'ip', 'username', 'version', 'connectivity',
-          'systemuser', 'date_created', 'date_updated', 'can_moveout', 'actions'
+          'systemuser', 'date_created', 'date_updated', 'actions'
         ],
         columnsShow: {
           min: ['username', 'actions'],
-          default: ['hostname', 'ip', 'username', 'version', 'can_moveout', 'actions']
+          default: ['hostname', 'ip', 'username', 'version', 'actions']
         },
         columnsMeta: {
           hostname: {
@@ -80,9 +80,6 @@ export default {
                 }
               }
             }
-          },
-          can_moveout: {
-            label: this.$t('assets.CanMoveOut')
           },
           ip: {
             width: '120px'
@@ -113,28 +110,6 @@ export default {
                   callback: ({ row }) => {
                     vm.account = row
                     vm.showViewSecretDialog = true
-                  }
-                },
-                {
-                  name: 'MoveIn',
-                  title: this.$t('common.MoveIn'),
-                  // 权限需要
-                  can: this.$hasPerm('assets.movein_assetaccount'),
-                  type: 'primary',
-                  callback: ({ row }) => {
-                    vm.account = row
-                    console.log(row)
-                  }
-                },
-                {
-                  name: 'MoveOut',
-                  title: this.$t('common.MoveOut'),
-                  // 权限需要
-                  can: this.$hasPerm('assets.moveout_assetaccount'),
-                  type: 'primary',
-                  callback: ({ row }) => {
-                    vm.account = row
-                    console.log(row)
                   }
                 },
                 {
