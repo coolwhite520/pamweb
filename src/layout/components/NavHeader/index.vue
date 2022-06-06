@@ -1,24 +1,24 @@
 <template>
   <div class="navbar">
     <ul class="navbar-right">
-<!--      <li class="header-item header-icon">-->
-<!--        <el-tooltip effect="dark" :content="this.$t('route.SiteMessageList')">-->
-<!--          <SiteMessages />-->
-<!--        </el-tooltip>-->
-<!--      </li>-->
-<!--      <li v-perms="['rbac.view_webterminal']" class="header-item header-icon">-->
-<!--        <el-tooltip effect="dark" :content="this.$t('route.WebTerminal')">-->
-<!--          <WebTerminal />-->
-<!--        </el-tooltip>-->
-<!--      </li>-->
-<!--      <li v-perms="'settings.view_setting'" class="header-item header-icon">-->
-<!--        <el-tooltip effect="dark" :content="this.$t('route.SystemSetting')">-->
-<!--          <SystemSetting />-->
-<!--        </el-tooltip>-->
-<!--      </li>-->
-<!--      <li v-if="this.$hasLicense() && this.$hasPerm('tickets.view_ticket')" class="header-item header-hover">-->
-<!--        <Tickets />-->
-<!--      </li>-->
+      <!--      <li class="header-item header-icon">-->
+      <!--        <el-tooltip effect="dark" :content="this.$t('route.SiteMessageList')">-->
+      <!--          <SiteMessages />-->
+      <!--        </el-tooltip>-->
+      <!--      </li>-->
+      <!--      <li v-perms="['rbac.view_webterminal']" class="header-item header-icon">-->
+      <!--        <el-tooltip effect="dark" :content="this.$t('route.WebTerminal')">-->
+      <!--          <WebTerminal />-->
+      <!--        </el-tooltip>-->
+      <!--      </li>-->
+      <li v-perms="'settings.view_setting'" class="header-item header-icon">
+        <el-tooltip effect="dark" :content="this.$t('route.SystemSetting')">
+          <SystemSetting />
+        </el-tooltip>
+      </li>
+      <!--      <li v-if="this.$hasLicense() && this.$hasPerm('tickets.view_ticket')" class="header-item header-hover">-->
+      <!--        <Tickets />-->
+      <!--      </li>-->
       <li class="header-item header-profile">
         <AccountDropdown />
       </li>
@@ -28,9 +28,9 @@
       <li class="left-item">
         <ViewSwitcher />
       </li>
-<!--      <li v-if="showOrganize()" class="left-item" style="margin-left: 12px">-->
-<!--        <Organization class="organization" />-->
-<!--      </li>-->
+      <!--      <li v-if="showOrganize()" class="left-item" style="margin-left: 12px">-->
+      <!--        <Organization class="organization" />-->
+      <!--      </li>-->
     </ul>
   </div>
 </template>
@@ -44,18 +44,18 @@ import AccountDropdown from './AccountDropdown'
 // import Tickets from './Tickets'
 import ViewSwitcher from './ViewSwitcher'
 // import Organization from './Organization'
-// import SystemSetting from './SystemSetting'
+import SystemSetting from './SystemSetting'
 
 export default {
   components: {
     Hamburger,
     ViewSwitcher,
     // Organization,
-    AccountDropdown
+    AccountDropdown,
     // Tickets,
     // WebTerminal,
     // SiteMessages,
-    // SystemSetting
+    SystemSetting
   },
   data() {
     return {

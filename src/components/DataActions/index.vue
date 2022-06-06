@@ -75,7 +75,9 @@ export default {
   },
   computed: {
     iActions() {
-      return this.cleanActions(this.actions)
+      const iActions = this.cleanActions(this.actions)
+      this.$log.debug('iActions:', iActions)
+      return iActions
     }
   },
   methods: {

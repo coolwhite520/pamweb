@@ -105,6 +105,7 @@
     "AdminUserDetail": "管理用户详情",
     "AdminUserListHelpMessage": "<b>特权用户</b> 是资产已存在的, 并且拥有 高级权限 的系统用户， 如 root 或 拥有 `NOPASSWD: ALL` sudo 权限的用户。 PamServer 使用该用户来 `推送系统用户`、`获取资产硬件信息` 等。",
     "Asset": "资产",
+    "CanMoveOut": "可迁出",
     "HardwareInfo": "硬件信息",
     "AssetDetail": "资产详情",
     "AssetList": "资产列表",
@@ -254,6 +255,8 @@
     "ReLogin": "重新登录"
   },
   "common": {
+    "MoveOut": "迁出",
+    "MoveIn": "迁入",
     "Component": "组件",
     "PrivateCloud": "私有云",
     "PublicCloud": "公有云",

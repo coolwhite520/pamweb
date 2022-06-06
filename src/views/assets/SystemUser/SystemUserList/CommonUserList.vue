@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-alert v-if="helpMessage" type="success">
-      <span v-html="helpMessage" />
-    </el-alert>
-    <GenericListTable :table-config="tableConfig" :header-actions="headerActions" :help-message="helpMessage" />
+    <!--    <el-alert v-if="helpMessage" type="success">-->
+    <!--      <span v-html="helpMessage" />-->
+    <!--    </el-alert>-->
+    <GenericListTable :table-config="tableConfig" :header-actions="headerActions" />
   </div>
 </template>
 
