@@ -11,14 +11,14 @@
       <!--          <WebTerminal />-->
       <!--        </el-tooltip>-->
       <!--      </li>-->
-      <li v-perms="'settings.view_setting'" class="header-item header-icon">
-        <el-tooltip effect="dark" :content="this.$t('route.SystemSetting')">
-          <SystemSetting />
-        </el-tooltip>
-      </li>
-      <!--      <li v-if="this.$hasLicense() && this.$hasPerm('tickets.view_ticket')" class="header-item header-hover">-->
-      <!--        <Tickets />-->
+      <!--      <li v-perms="'settings.view_setting'" class="header-item header-icon">-->
+      <!--        <el-tooltip effect="dark" :content="this.$t('route.SystemSetting')">-->
+      <!--          <SystemSetting />-->
+      <!--        </el-tooltip>-->
       <!--      </li>-->
+      <li v-if="this.$hasLicense() && this.$hasPerm('tickets.view_ticket')" class="header-item header-hover">
+        <Tickets />
+      </li>
       <li class="header-item header-profile">
         <AccountDropdown />
       </li>
@@ -41,10 +41,10 @@ import Hamburger from '@/components/Hamburger'
 import AccountDropdown from './AccountDropdown'
 // import SiteMessages from './SiteMessages'
 // import WebTerminal from './WebTerminal'
-// import Tickets from './Tickets'
+import Tickets from './Tickets'
 import ViewSwitcher from './ViewSwitcher'
 // import Organization from './Organization'
-import SystemSetting from './SystemSetting'
+// import SystemSetting from './SystemSetting'
 
 export default {
   components: {
@@ -52,10 +52,10 @@ export default {
     ViewSwitcher,
     // Organization,
     AccountDropdown,
-    // Tickets,
+    Tickets
     // WebTerminal,
     // SiteMessages,
-    SystemSetting
+    // SystemSetting
   },
   data() {
     return {
